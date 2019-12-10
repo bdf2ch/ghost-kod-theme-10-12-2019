@@ -1,0 +1,39 @@
+.sharing
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin-bottom: 20px
+  a
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 35px
+    height: 35px
+    margin-right: 6px
+    background-color: #008dcd
+    border-radius: 50%
+    cursor: pointer
+    &:last-of-type
+      margin-right: 0px
+  i
+    font-size: 18px
+    color: white
+  img
+    width: 30px
+    height: 30px
+    background-color: #008dcd
+
+.sharing-button
+  display: flex
+  position: fixed
+  right: 20px
+  bottom: 20px
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background: red
+  +media-breakpoint-up(lg)
+    display: none
+
+
