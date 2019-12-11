@@ -1,5 +1,9 @@
-function commentsOnLoad() {
-    console.log('comments loaded');
+function expandSharings() {
+    const sharings = document.getElementsByClassName('sharing-button')[0];
+    //if (!sharings.classList.contains('expanded')) {
+    const container = document.getElementsByClassName('sharing-button-container')[0];
+    container.classList.toggle('expanded');
+    //}
 }
 
 // Featured posts menu toggle
@@ -86,7 +90,7 @@ $(document).ready(() => {
     const expandContainer = $('.sharing-button-container .share-container');
     const shareExpandButton = $('.sharing-button-container .sharing-button');
     container.classList.add('sharing');
-    $(shareExpandButton).click();
+    //$(shareExpandButton).click();
 
     const telegram = document.createElement('a');
     const telegramIcon = document.createElement('i');
@@ -95,7 +99,7 @@ $(document).ready(() => {
     telegram.setAttribute('target', '_blank');
     $(telegram).append(telegramIcon);
     $(container).append(telegram);
-    $(expandContainer).append(telegram);
+    $(telegram).clone().appendTo(expandContainer);
 
     const facebook = document.createElement('a');
     const facebookIcon = document.createElement('i');
@@ -104,7 +108,7 @@ $(document).ready(() => {
     facebook.setAttribute('target', '_blank');
     $(facebook).append(facebookIcon);
     $(container).append(facebook);
-    $(expandContainer).append(facebook);
+    $(facebook).clone().appendTo(expandContainer);
 
     const twitter = document.createElement('a');
     const twitterIcon = document.createElement('i');
@@ -113,7 +117,7 @@ $(document).ready(() => {
     twitter.setAttribute('target', '_blank');
     $(twitter).append(twitterIcon);
     $(container).append(twitter);
-    $(expandContainer).append(twitter);
+    $(twitter).clone().appendTo(expandContainer);
 
     const vk = document.createElement('a');
     const vkIcon = document.createElement('i');
@@ -122,7 +126,7 @@ $(document).ready(() => {
     vk.setAttribute('target', '_blank');
     $(vk).append(vkIcon);
     $(container).append(vk);
-    $(expandContainer).append(vk);
+    $(vk).clone().appendTo(expandContainer);
 
     // const html = '<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aa3915aa61f8d53"></script><p class="addthis_inline_share_toolbox"></p>'
     const firstParagraph = $('.js-post-body p').first()

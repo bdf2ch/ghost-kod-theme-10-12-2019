@@ -37,7 +37,18 @@
   bottom: 20px
   +media-breakpoint-up(lg)
     display: none
+  &.expanded
+    .share-container
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+    .fa-times
+      display: flex
+    .fa-share-alt
+      display: none !important
   .share-container
+    display: none
     position: relative
     margin-bottom: 15px
     a
@@ -68,5 +79,10 @@
     i
       font-size: 20px
       color: white
+
+    .fa-times
+      display: none
+    .fa-share-alt
+      display: flex
 
 
