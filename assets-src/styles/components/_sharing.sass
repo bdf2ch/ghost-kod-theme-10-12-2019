@@ -1,8 +1,11 @@
 .sharing
-  display: flex
+  display: none
+  cursor: pointer
   flex-direction: row
   align-items: center
-  margin-bottom: 20px
+  margin-bottom: 30px
+  +media-breakpoint-up(lg)
+    display: flex
   a
     display: flex
     flex-direction: row
@@ -24,16 +27,46 @@
     height: 30px
     background-color: #008dcd
 
-.sharing-button
+.sharing-button-container
   display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
   position: fixed
   right: 20px
   bottom: 20px
-  width: 50px
-  height: 50px
-  border-radius: 50%
-  background: red
   +media-breakpoint-up(lg)
     display: none
+  .share-container
+    position: relative
+    margin-bottom: 15px
+    a
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      width: 50px
+      height: 50px
+      margin-top: 10px
+      background-color: #008dcd
+      border-radius: 50%
+      cursor: pointer
+      &:first-of-type
+        margin-top: 0px
+    i
+      font-size: 18px
+      color: white
+  .sharing-button
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background: rgba(27, 127, 204, 0.5)
+    i
+      font-size: 20px
+      color: white
 
 

@@ -1,3 +1,7 @@
+function commentsOnLoad() {
+    console.log('comments loaded');
+}
+
 // Featured posts menu toggle
 $('.featured-post.dropdown').click(() => {
   $('.featured-posts').toggleClass('expanded')
@@ -79,7 +83,10 @@ $(document).ready(() => {
     const location = window.location;
     const title = document.title;
     const container = document.createElement('div');
+    const expandContainer = $('.sharing-button-container .share-container');
+    const shareExpandButton = $('.sharing-button-container .sharing-button');
     container.classList.add('sharing');
+    $(shareExpandButton).click();
 
     const telegram = document.createElement('a');
     const telegramIcon = document.createElement('i');
@@ -88,6 +95,7 @@ $(document).ready(() => {
     telegram.setAttribute('target', '_blank');
     $(telegram).append(telegramIcon);
     $(container).append(telegram);
+    $(expandContainer).append(telegram);
 
     const facebook = document.createElement('a');
     const facebookIcon = document.createElement('i');
@@ -96,6 +104,7 @@ $(document).ready(() => {
     facebook.setAttribute('target', '_blank');
     $(facebook).append(facebookIcon);
     $(container).append(facebook);
+    $(expandContainer).append(facebook);
 
     const twitter = document.createElement('a');
     const twitterIcon = document.createElement('i');
@@ -104,6 +113,7 @@ $(document).ready(() => {
     twitter.setAttribute('target', '_blank');
     $(twitter).append(twitterIcon);
     $(container).append(twitter);
+    $(expandContainer).append(twitter);
 
     const vk = document.createElement('a');
     const vkIcon = document.createElement('i');
@@ -112,6 +122,7 @@ $(document).ready(() => {
     vk.setAttribute('target', '_blank');
     $(vk).append(vkIcon);
     $(container).append(vk);
+    $(expandContainer).append(vk);
 
     // const html = '<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aa3915aa61f8d53"></script><p class="addthis_inline_share_toolbox"></p>'
     const firstParagraph = $('.js-post-body p').first()
