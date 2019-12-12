@@ -22,6 +22,7 @@ const paths = {
       'node_modules/reframe.js/dist/jquery.reframe.min.js',
       'node_modules/reframe.js/dist/jquery.noframe.min.js',
       'node_modules/sticky-kit/dist/sticky-kit.min.js',
+      'node_modules/ghost-finder/dist/ghost-finder.js',
       'assets-src/scripts/all.js'
     ],
     dest: 'assets/scripts'

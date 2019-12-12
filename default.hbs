@@ -86,12 +86,32 @@
     <span><i class="fas fa-long-arrow-alt-up"></i></span>
   </div>
 
+  <script src="{{asset "scripts/all.js"}}"></script>
+  <script>
+      new GhostFinder({
+          input: '#search-input',
+          showResult: '#search-result',
+          contentApiKey: '61066f2b6d607b86e76d418d25',
+          time_format: 'DD.MM.YYYY',
+          resultTemplate:
+                  '<div class="search-results-wrapper">\n' +
+                  '    ##results\n' +
+                  '</div>',
+          singleResultTemplate:
+                  `<a href="##url" class="search-result">
+                    <div class="title-and-date">
+                        <span class="title">##title</span>
+                        <span class="date">##published_at</span>
+                    </div>
+                    <span class="excerpt">##excerpt</span>
+               </a>`
+      });
+  </script>
   {{#if pagination.pages}}
     <script>
       var maxPages = '{{pagination.pages}}';
     </script>
   {{/if}}
-  <script src="{{asset "scripts/all.js"}}"></script>
   {{ghost_foot}}
 
 </body>

@@ -1,6 +1,20 @@
 .navbar
+  overflow: visible
   display: flex
   flex-wrap: wrap
+  &.search-expanded
+    .navbar-logo
+      display: none
+    .navbar-touch
+      display: none
+    .navbar-nav
+      display: none
+    .navbar-search
+      display: none
+    .search-container
+      display: flex
+    .navbar-nav-toggle
+      display: none
 
 .navbar-logo
   +no-user-select()
@@ -20,6 +34,102 @@
   touch-action: none
   width: 100%
 
+  +media-breakpoint-up(lg)
+    display: none
+
+.search-results-wrapper
+  position: relative
+  overflow: auto
+  width: 100%
+  max-height: 450px
+  margin-top: 7px
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+
+.search-container
+  $size: $navbar-height
+  overflow: visible
+  display: none
+  position: relative
+  width: 100%
+  flex-direction: column
+  flex: 1
+  height: $size
+  .search
+    overflow: visible
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    i
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      width: $size
+      height: $size
+      color: $primary
+      font-size: 22px
+      cursor: pointer
+    input[type='text']
+      width: 100%
+      height: 100%
+      font-size: 16px
+      border: none
+      outline: none
+      .night-mode &
+        background-color: $night-mode-dark-gray
+        color: $night-mode-light-gray
+  .search-result
+    display: flex
+    flex-direction: column
+    height: 90px
+    padding: 20px
+    background-color: white
+    border-bottom: 1px solid #eeeeee
+    .night-mode &
+      background-color: $night-mode-dark-gray
+      border-bottom: 1px solid $dark-gray
+    &:last-of-type
+      // padding-top: 0px !important
+      border-bottom: none
+    .title-and-date
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: flex-start
+      .title
+        height: 27px
+        font-size: 18px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        .night-mode &
+          color: white
+      .date
+        margin-left: 10px
+        color: #008dcd
+        font-size: 16px
+    .excerpt
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      height: 22px
+      font-size: 15px
+      color: #9e9e9e
+      .night-mode &
+        color: $night-mode-light-gray
+
+.navbar-search
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  $size: $navbar-height
+  width: $size
+  height: $size
+  color: $primary
+  font-size: 22px
+  cursor: pointer
   +media-breakpoint-up(lg)
     display: none
 
@@ -80,6 +190,11 @@
     display: flex
     flex-direction: column
     text-align: center
+  .navbar-search-toggle
+    display: none
+  +media-breakpoint-up(lg)
+    .navbar-search-toggle
+      display: flex
 
   &,
   &.is-active
@@ -156,8 +271,7 @@
   font-weight: $global-font-weight-bold
 
 // Night Mode Toggle
-
-.navbar-night-mode-toggle
+.navbar-night-mode-toggle, .navbar-search-toggle
   +margin($spacer $spacer * 1.5)
   background-color: $light-gray
   border-radius: $global-border-radius

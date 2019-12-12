@@ -1,10 +1,24 @@
 function expandSharings() {
-    const sharings = document.getElementsByClassName('sharing-button')[0];
-    //if (!sharings.classList.contains('expanded')) {
     const container = document.getElementsByClassName('sharing-button-container')[0];
     container.classList.toggle('expanded');
-    //}
 }
+
+// Search toggle
+$('.navbar-search-toggle').click(() => {
+    const search = document.getElementsByClassName('navbar')[0];
+    search.classList.toggle('search-expanded');
+});
+$('.navbar-search').click(() => {
+    const search = document.getElementsByClassName('navbar')[0];
+    search.classList.toggle('search-expanded');
+});
+$('.search .fa-times').click(() => {
+    const search = document.getElementsByClassName('navbar')[0];
+    const input = document.getElementById('search-input');
+    input.value = '';
+    $('#search-result .search-results-wrapper').empty();
+    search.classList.toggle('search-expanded');
+});
 
 // Featured posts menu toggle
 $('.featured-post.dropdown').click(() => {

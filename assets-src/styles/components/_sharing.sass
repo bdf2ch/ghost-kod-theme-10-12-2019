@@ -19,13 +19,12 @@
     cursor: pointer
     &:last-of-type
       margin-right: 0px
+    .night-mode &
+      background-color: $night-mode-light-gray
+      box-shadow: none
   i
     font-size: 18px
     color: white
-  img
-    width: 30px
-    height: 30px
-    background-color: #008dcd
 
 .sharing-button-container
   display: flex
@@ -64,6 +63,9 @@
       cursor: pointer
       &:first-of-type
         margin-top: 0px
+      .night-mode &
+        background-color: $night-mode-light-gray
+        box-shadow: none
     i
       font-size: 18px
       color: white
@@ -76,6 +78,9 @@
     height: 50px
     border-radius: 50%
     background: rgba(27, 127, 204, 0.5)
+    .night-mode &
+      background: $night-mode-light-gray
+      box-shadow: none
     i
       font-size: 20px
       color: white
