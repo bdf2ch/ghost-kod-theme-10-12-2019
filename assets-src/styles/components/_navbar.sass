@@ -54,6 +54,27 @@
   flex-direction: column
   flex: 1
   height: $size
+  .lens
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: $size
+    height: $size
+    color: $primary
+    cursor: pointer
+    font-size: 20px
+    transform: rotate(-90deg)
+  .times
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: $size
+    height: $size
+    color: $primary
+    cursor: pointer
+    font-size: 28px
   .search
     overflow: visible
     display: flex
@@ -271,7 +292,47 @@
   font-weight: $global-font-weight-bold
 
 // Night Mode Toggle
-.navbar-night-mode-toggle, .navbar-search-toggle
+.navbar-search-toggle
+  +margin($spacer $spacer * 1.5)
+  background-color: $light-gray
+  border-radius: $global-border-radius
+  border: 1px solid rgba($primary, 0.1)
+  box-shadow: inset 0 1px rgba($white, 0.25)
+  cursor: pointer
+  font-size: 23px
+  font-weight: $global-font-weight-bold
+  text-shadow: 0 1px rgba($white, 0.5)
+  transform: rotate(-90deg)
+
+  .night-mode &
+    background-color: $primary
+    border-color: rgba($black, 0.25)
+    color: $white
+    text-shadow: none
+
+  +media-breakpoint-up(lg)
+    +margin(0)
+    +no-user-select()
+    $size: $navbar-height
+    align-items: center
+    background-color: rgba($black, 0.01)
+    border: none
+    border-left: 1px solid rgba($black, 0.03)
+    border-radius: 0
+    box-shadow: none
+    display: flex
+    font-size: 21px
+    height: $size
+    justify-content: center
+    width: $size
+
+    .night-mode &
+      background-color: rgba($white, 0.01)
+      border-color: rgba($white, 0.03)
+
+    span
+      display: none
+.navbar-night-mode-toggle
   +margin($spacer $spacer * 1.5)
   background-color: $light-gray
   border-radius: $global-border-radius

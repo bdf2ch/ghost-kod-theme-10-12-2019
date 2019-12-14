@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "start": "gulp",
-    "zip": "gulp archive"
+    "zip": "gulp archive",
+    "server": "node assets-src/scripts/server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -47,6 +48,10 @@
     "posts_per_page": 21
   },
   "dependencies": {
-    "ghost-finder": "^3.0.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ghost-finder": "^3.0.1",
+    "node-persist": "^3.0.5"
   }
 }

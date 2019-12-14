@@ -11,20 +11,30 @@
     flex-direction: row
     justify-content: center
     align-items: center
-    width: 35px
-    height: 35px
+    // width: 35px
+    //height: 35px
+    //padding-left: 5px
+    //padding-right: 5px
+    padding: 2px 10px
     margin-right: 6px
     background-color: #008dcd
-    border-radius: 50%
+    font-size: 13px
+    color: white
+    // border-radius: 50%
+    border-radius: 4px
+    border-bottom: 1px solid #61A9DB
     cursor: pointer
+    &:hover
+      color: white
     &:last-of-type
       margin-right: 0px
     .night-mode &
       background-color: $night-mode-light-gray
       box-shadow: none
   i
-    font-size: 18px
+    font-size: 14px
     color: white
+    margin-right: 10px
 
 .sharing-button-container
   display: flex
@@ -34,9 +44,12 @@
   position: fixed
   right: 20px
   bottom: 20px
+  z-index: 15000
   +media-breakpoint-up(lg)
     display: none
   &.expanded
+    span
+      display: none
     .share-container
       display: flex
       flex-direction: column

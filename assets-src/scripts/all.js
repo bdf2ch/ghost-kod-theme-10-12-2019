@@ -12,7 +12,7 @@ $('.navbar-search').click(() => {
     const search = document.getElementsByClassName('navbar')[0];
     search.classList.toggle('search-expanded');
 });
-$('.search .fa-times').click(() => {
+$('.search .times').click(() => {
     const search = document.getElementsByClassName('navbar')[0];
     const input = document.getElementById('search-input');
     input.value = '';
@@ -112,6 +112,7 @@ $(document).ready(() => {
     telegram.setAttribute('href', encodeURI('https://www.addtoany.com/add_to/telegram?linkurl=' + location + '&linkname=' + title));
     telegram.setAttribute('target', '_blank');
     $(telegram).append(telegramIcon);
+    $(telegram).append('<span>Telegram</span>');
     $(container).append(telegram);
     $(telegram).clone().appendTo(expandContainer);
 
@@ -121,6 +122,7 @@ $(document).ready(() => {
     facebook.setAttribute('href', encodeURI('https://www.addtoany.com/add_to/facebook?linkurl=' + location + '&linkname=' + title));
     facebook.setAttribute('target', '_blank');
     $(facebook).append(facebookIcon);
+    $(facebook).append('<span>Facebook</span>');
     $(container).append(facebook);
     $(facebook).clone().appendTo(expandContainer);
 
@@ -130,6 +132,7 @@ $(document).ready(() => {
     twitter.setAttribute('href', encodeURI('https://www.addtoany.com/add_to/twitter?linkurl=' + location + '&linkname=' + title));
     twitter.setAttribute('target', '_blank');
     $(twitter).append(twitterIcon);
+    $(twitter).append('<span>Twitter</span>');
     $(container).append(twitter);
     $(twitter).clone().appendTo(expandContainer);
 
@@ -139,6 +142,7 @@ $(document).ready(() => {
     vk.setAttribute('href', encodeURI('https://www.addtoany.com/add_to/vk?linkurl=' + location + '&linkname=' + title));
     vk.setAttribute('target', '_blank');
     $(vk).append(vkIcon);
+    $(vk).append('<span>Vkontakte</span>');
     $(container).append(vk);
     $(vk).clone().appendTo(expandContainer);
 
