@@ -44,6 +44,9 @@
       "@babel/preset-env"
     ]
   },
+  "engines": {
+    "ghost-api": "v2"
+  },
   "config": {
     "posts_per_page": 21
   },

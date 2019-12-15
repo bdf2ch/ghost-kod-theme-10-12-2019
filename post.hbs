@@ -26,13 +26,12 @@
                 <time class="post-date text is-7 is-primary" datetime="{{date published_at format="YYYY-MM-DD"}}">
                   <i class="far fa-clock"></i> &nbsp; {{date published_at format="<b>D/MM/YYYY</b> в HH:mm"}}
                 </time>
-                  <div class="post-views">
+                  <!--<div class="post-views">-->
                       <!--<i class="far fa-eye"></i>-->
-
                       <!--<img src="{{asset 'images/eye.png'}}" />-->
-                      <img class="eye" src="{{asset 'images/eye.svg'}}" style="mask: url('{{asset 'images/eye.svg'}}') no-repeat center"/>
-                      <span id="post-views-counter">0</span>
-                  </div>
+                      <!--<img class="eye" src="{{asset 'images/eye.svg'}}" style="mask: url('{{asset 'images/eye.svg'}}') no-repeat center"/>-->
+                      <!--<span id="post-views-counter">0</span>-->
+                  <!--</div>-->
               </div>
             {{/is}}
           </header>
@@ -134,6 +133,7 @@
                       gid: '5ddcd4bb55299c1f4077e9e6',
                       onError: function (e) { console.log(e); }  
               });
+              /*
               $jq.post("http://165.227.148.120:12345", {url: window.location.pathname}).done(function (data) {
                   const counter = document.getElementById('post-views-counter');
                   counter.innerText = data;
@@ -144,6 +144,7 @@
                       counter.innerText = data;
                   });
               }, 10000);
+               */
           </script>
     
 
